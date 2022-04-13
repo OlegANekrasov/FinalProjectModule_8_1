@@ -23,6 +23,7 @@ namespace FinalProjectModule_8_1
             var directory = new DirectoryInfo(path);
             if (directory.Exists) // предусмотрена проверка на наличие папки по заданному пути
             {
+                Console.WriteLine($"Папка: {path}\n");
                 try // предусмотрена обработка исключений при доступе к папке
                 {
                     Cleaning(directory, ref delDir, ref delFile);
@@ -32,7 +33,6 @@ namespace FinalProjectModule_8_1
                     Console.WriteLine("Ошибка чистки папки: " + ex); // логирует исключение в консоль
                 }
 
-                Console.WriteLine($"Папка: {path}\n");
                 Console.WriteLine($"Папка очистилась от файлов ({delFile}) и папок ({delDir})," +
                                             "\nкоторые не использовались более 30 минут");
             }
